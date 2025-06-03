@@ -1,19 +1,21 @@
 import {
-  CommonModule,
-  DOCUMENT,
-  DomAdapter,
   DomRendererFactory2,
   EVENT_MANAGER_PLUGINS,
   EventManager,
   EventManagerPlugin,
+  SharedStylesHost
+} from "./chunk-AVAOFTMH.js";
+import {
+  CommonModule,
+  DOCUMENT,
+  DomAdapter,
   PLATFORM_BROWSER_ID,
-  SharedStylesHost,
   XhrFactory,
   getDOM,
   isPlatformServer,
   parseCookieValue,
   setRootDomAdapter
-} from "./chunk-KO4LGFU2.js";
+} from "./chunk-GUKTTZZU.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationModule,
@@ -3740,4 +3742,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-PWF7K2OE.js.map
+//# sourceMappingURL=chunk-FGFDHEIP.js.map

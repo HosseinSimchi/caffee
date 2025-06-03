@@ -1,7 +1,9 @@
 import {
-  DOCUMENT,
   DomRendererFactory2
-} from "./chunk-KO4LGFU2.js";
+} from "./chunk-AVAOFTMH.js";
+import {
+  DOCUMENT
+} from "./chunk-GUKTTZZU.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionScheduler,
