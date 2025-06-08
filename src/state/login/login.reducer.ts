@@ -1,32 +1,34 @@
-import { createAction, createFeature, createReducer, createSelector, on } from "@ngrx/store";
+import {
+  createAction,
+  createFeature,
+  createReducer,
+  createSelector,
+  on,
+} from "@ngrx/store";
 import { initialState } from "./login.state";
-
-// Actions
-export const increment = createAction("[Counter] Increment");
-export const decrement = createAction("[Counter] Decrement");
-export const reset = createAction("[Counter] Reset");
-export const setValue = createAction(
-  "[Counter] Set Value",
-  (value: number) => ({ value })
-);
+import { loginActions } from "./login.action";
 
 // Reducer
-export const counterReducer = createReducer(
+export const loginReducer = createReducer(
   initialState,
-  on(increment, (state) => ({ ...state, count: state.count + 1 })),
-  on(decrement, (state) => ({ ...state, count: state.count - 1 })),
-  on(reset, (state) => ({ ...state, count: 0 })),
-  on(setValue, (state, { value }) => ({ ...state, count: value }))
+  on(loginActions.saveUsername, (state, { username }) => {
+    localStorage.setItem("username", "hsimchi");
+    return {
+      ...state,
+      username: username,
+    };
+  }),
+  on(loginActions.getUsername, (state) => {
+    let getUsername = localStorage.getItem("username") ?? "";
+    return { ...state, username: getUsername };
+  })
 );
 
 // Feature
 export const counterFeature = createFeature({
-  name: "counter",
-  reducer: counterReducer,
-  extraSelectors: ({ selectCount }) => ({
-    selectDouble: createSelector(selectCount, (count) => count * 2),
-  }),
+  name: "login",
+  reducer: loginReducer,
 });
 
 // Export selectors
-export const { selectCount, selectDouble } = counterFeature;
+export const { selectUsername, selectPassword } = counterFeature;

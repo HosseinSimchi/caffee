@@ -1,7 +1,9 @@
-export interface CounterState {
-  count: number;
+export interface LoginState {
+  username: string;
+  password: string
 }
 
-export const initialState: CounterState = {
-  count: 0,
+export const initialState: LoginState = {
+  username: "",
+  password: "",
 };
